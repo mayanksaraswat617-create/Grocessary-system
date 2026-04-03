@@ -1,0 +1,147 @@
+[
+  {
+    "id": "TC001",
+    "title": "Login with valid credentials redirects to customer home",
+    "description": "Verifies a user can log in with valid email/password and land on the customer home page.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Grocessary Website/pages/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the customer home page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify primary customer home content is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Login with incorrect password shows authentication failure",
+    "description": "Verifies an incorrect password prevents login and shows an authentication failure notification.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Grocessary Website/pages/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with invalid-password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authentication failure notification is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the login page"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Login page loads and exposes primary login form controls",
+    "description": "Verifies the login page loads and the email and password inputs are available for interaction.",
+    "category": "User Login",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Grocessary Website/pages/auth/login.php"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the email input field is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the password input field is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Login form blocks submission with empty required fields",
+    "description": "Verifies submitting the login form without required inputs shows a validation error.",
+    "category": "User Login",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Grocessary Website/pages/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a required-field validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the login page"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Email format validation appears for invalid email input",
+    "description": "Verifies the login form displays a validation error when the email format is invalid.",
+    "category": "User Login",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /Grocessary Website/pages/auth/login.php"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with invalid-email-format"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the login page"
+      }
+    ]
+  }
+]

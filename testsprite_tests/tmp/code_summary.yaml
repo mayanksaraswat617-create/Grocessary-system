@@ -1,0 +1,33 @@
+version: "2"
+type: backend
+tech_stack:
+  - PHP
+  - HTML
+  - Vanilla JS
+  - CSS
+routes:
+  - path: /Grocessary Website/pages/auth/login.php
+    file: pages/auth/login.php
+    auth_required: false
+    description: User login page
+  - path: /Grocessary Website/pages/auth/register.php
+    file: pages/auth/register.php
+    auth_required: false
+    description: User registration page
+  - path: /Grocessary Website/pages/customer/home.php
+    file: pages/customer/home.php
+    auth_required: false
+    description: Customer home page
+features:
+  - name: User Login
+    description: Login with email and password credentials
+    files:
+      - pages/auth/login.php
+    entry_route: /Grocessary Website/pages/auth/login.php
+    user_interactions:
+      - Fill email input field
+      - Fill password input field
+      - Click Login button to submit
+    api_calls: []
+    auth_required: false
+known_limitations: []

@@ -1,0 +1,126 @@
+/* ============================================================
+   GROCEESARY – Responsive / Mobile-First Media Queries
+   Breakpoints: sm 576px | md 768px | lg 992px | xl 1200px
+   ============================================================ */
+
+/* ============================================================
+   BASE (Mobile First – 0px+)
+   ============================================================ */
+.hide-mobile  { display: none !important; }
+.show-mobile  { display: block !important; }
+
+.grid-cols-2   { grid-template-columns: 1fr 1fr; }
+.grid-cols-3,
+.grid-cols-4,
+.grid-cols-5,
+.grid-cols-6   { grid-template-columns: 1fr; }
+
+.dashboard-layout { grid-template-columns: 1fr; }
+.sidebar           { position: fixed; left: -260px; z-index: var(--z-sticky); transition: left var(--transition-base); top: 0; height: 100vh; }
+.sidebar.open      { left: 0; }
+.dashboard-main    { padding: var(--space-4); }
+
+/* ============================================================
+   sm – 576px+
+   ============================================================ */
+@media (min-width: 576px) {
+  .grid-cols-2   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-3   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-4   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-5   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-6   { grid-template-columns: repeat(3, 1fr); }
+
+  .container     { padding-inline: var(--space-6); }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+
+  .modal { width: 80%; }
+}
+
+/* ============================================================
+   md – 768px+
+   ============================================================ */
+@media (min-width: 768px) {
+  .hide-mobile  { display: block !important; }
+  .show-mobile  { display: none  !important; }
+
+  .grid-cols-3   { grid-template-columns: repeat(3, 1fr); }
+  .grid-cols-4   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-5   { grid-template-columns: repeat(3, 1fr); }
+  .grid-cols-6   { grid-template-columns: repeat(4, 1fr); }
+
+  .modal { max-width: 520px; }
+}
+
+/* ============================================================
+   lg – 992px+
+   ============================================================ */
+@media (min-width: 992px) {
+  .grid-cols-4  { grid-template-columns: repeat(4, 1fr); }
+  .grid-cols-5  { grid-template-columns: repeat(5, 1fr); }
+  .grid-cols-6  { grid-template-columns: repeat(6, 1fr); }
+
+  /* Dashboard sidebar visible */
+  .dashboard-layout { grid-template-columns: 260px 1fr; }
+  .sidebar           { position: sticky; left: 0; height: 100vh; top: 0; }
+  .sidebar-toggle    { display: none !important; }
+  .dashboard-main    { padding: var(--space-6); }
+}
+
+/* ============================================================
+   xl – 1200px+
+   ============================================================ */
+@media (min-width: 1200px) {
+  .container { padding-inline: var(--space-5); }
+  h1 { font-size: var(--text-5xl); }
+  h2 { font-size: 2.5rem; }
+}
+
+/* ============================================================
+   Product Grid – Context-Aware
+   ============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+@media (min-width: 576px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 992px) { .products-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+@media (min-width: 576px) { .categories-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) { .categories-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 992px) { .categories-grid { grid-template-columns: repeat(10, 1fr); } }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+@media (min-width: 768px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ============================================================
+   Navbar Responsive
+   ============================================================ */
+.nav-links-desktop { display: none; }
+.nav-mobile-menu   { display: block; }
+
+@media (min-width: 768px) {
+  .nav-links-desktop { display: flex; }
+  .nav-mobile-menu   { display: none; }
+}
+
+/* ============================================================
+   Print Styles
+   ============================================================ */
+@media print {
+  .no-print { display: none !important; }
+  .navbar, .sidebar, .btn { display: none !important; }
+  body { background: white; color: black; }
+}

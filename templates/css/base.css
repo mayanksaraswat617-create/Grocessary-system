@@ -1,0 +1,168 @@
+/* ============================================================
+   GROCEESARY – Base Styles
+   CSS Reset + Root Variables + Typography
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+/* ---- CSS Custom Properties --------------------------------- */
+:root {
+  /* Brand Colors (Amazon/Flipkart Mix) */
+  --color-primary:       #f3a847; /* Amazon Yellow/Orange */
+  --color-primary-dark:  #e09635;
+  --color-primary-light: #f6c075;
+  --color-secondary:     #232f3e; /* Amazon Navy */
+  --color-secondary-dark:#131921; /* Amazon Darkest Navy */
+  --color-secondary-light:#2874f0;/* Flipkart Blue Accent */
+
+  /* Semantic Colors */
+  --color-success:  #2ECC71;
+  --color-danger:   #e74c3c;
+  --color-warning:  #f39c12;
+  --color-info:     #3498db;
+
+  /* Neutrals */
+  --color-white:   #ffffff;
+  --color-bg:      #eaeded; /* Amazon light gray background */
+  --color-surface: #ffffff;
+  --color-border:  #d5d9d9;
+  --color-text:    #0f1111;
+  --color-muted:   #565959;
+  --color-dark:    #131921;
+
+  /* Gradient */
+  --gradient-primary:   linear-gradient(135deg, #f3a847 0%, #f6c075 100%);
+  --gradient-secondary: linear-gradient(135deg, #232f3e 0%, #131921 100%);
+  --gradient-hero:      linear-gradient(135deg, #131921 0%, #232f3e 50%, #2874f0 100%);
+  --gradient-card:      linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,0.5) 100%);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Typography */
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+  --font-mono:    'Courier New', monospace;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.25rem;   /* 36px */
+  --text-5xl:  3rem;      /* 48px */
+
+  --leading-tight:  1.25;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.625;
+
+  /* Borders */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg:  0 10px 30px rgba(0,0,0,0.12);
+  --shadow-xl:  0 20px 60px rgba(0,0,0,0.15);
+  --shadow-primary: 0 8px 24px rgba(255,107,53,0.35);
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* Z-index scale */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-above:    10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-modal:    300;
+  --z-toast:    400;
+}
+
+/* ---- CSS Reset --------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+svg        { display: inline-block; }
+a          { color: inherit; text-decoration: none; }
+a:hover    { color: var(--color-primary); }
+button     { cursor: pointer; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+ul, ol     { list-style: none; }
+table      { border-collapse: collapse; width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--color-dark);
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+p  { margin-bottom: var(--space-4); color: var(--color-muted); line-height: var(--leading-relaxed); }
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 600; color: var(--color-text); }
+em     { font-style: italic; }
+small  { font-size: var(--text-sm); }
+
+/* ---- Selection -------------------------------------------- */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---- Scrollbar -------------------------------------------- */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }

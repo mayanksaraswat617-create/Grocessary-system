@@ -1,0 +1,36 @@
+# GROCEESARY - .gitignore
+
+# Dependencies
+/vendor/
+
+# Local Configuration
+/config/config.local.php
+/config/database.local.php
+
+# Logs and temporary files
+/logs/*.log
+/tmp/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Database backups (keep the folder, ignore the files)
+/database/*.sql
+!/database/schema.sql
+!/database/seed_data.sql
+/database/*.sqlite
+!/database/groceesary.sqlite
+/database/*.db
+
+# Testsprite files
+.testsprite/
+testsprite_tests/
+testsprite.log
