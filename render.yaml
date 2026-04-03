@@ -1,0 +1,13 @@
+# Render Blueprint for PHP Deployment
+services:
+  - type: web
+    name: groceesary-market
+    runtime: php
+    plan: free
+    region: ohio
+    envVars:
+      - key: RENDER
+        value: true
+      - key: PHP_VERSION
+        value: 8.2
+    # Standard PHP Web Service on Render auto-detects index.php in root

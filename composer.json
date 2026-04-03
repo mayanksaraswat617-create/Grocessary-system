@@ -1,1 +1,9 @@
-{}
+{
+    "name": "mayank/groceesary",
+    "description": "Groceesary Marketplace Platform",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "license": "MIT"
+}
