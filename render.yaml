@@ -1,13 +1,10 @@
-# Render Blueprint for PHP Deployment
+# Render Blueprint for Dockerized PHP Deployment
 services:
   - type: web
     name: groceesary-market
-    runtime: php
+    runtime: docker # Force Docker mode (Standard PHP with SQLite/Apache)
     plan: free
     region: ohio
     envVars:
       - key: RENDER
         value: true
-      - key: PHP_VERSION
-        value: 8.2
-    # Standard PHP Web Service on Render auto-detects index.php in root
